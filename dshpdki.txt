@@ -1,0 +1,13 @@
+Mã học phần	Tên học phần	Số tín chỉ	Trọng số	Viện quản lý	Thời lượng	Lựa chọn đăng kí
+BS11012	Giáo dục thể chất 1	1	1.0	CNTT	1 months	false
+CSE702059		Trí tuệ nhân tạo trên thiết bị đầu cuối		3	1.0	CNTT	1 months	false
+CSE703032	Lập trình song song	3	1.0	CNTT	2 months	false
+hocphan10	Học sâu 10	3	1.0	CNTT	2 months	false
+hocphan11	Cơ sở dữ liệu 2 	3	1.0	CNTT	2 months	false
+hocphan12	Cơ sở dữ liệu 1	1	1.0	CNTT	2 months	false
+hocphan2	Thiết kế ứng dụng	3	1.0	CNTT	2 months	false
+hocphan3	Thuật toán ứng dụng	3	1.0	CNTT	2 months	false
+hocphan4	Xây dựng phần mềm	3	1.0	CNTT	2 months	false
+hocphan5	Giáo dục thể chất 2	1	1.0	CNTT	2 months	false
+hocphan6	Học phần đào tạo 2	1	1.0	CNTT	2 months	false
+hocphan7	www	2	1.0	CNTT	2 months	false

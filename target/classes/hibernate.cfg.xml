@@ -1,0 +1,15 @@
+<!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+    <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=test_sql;Integrated Security=true;</property>
+    <property name="hibernate.connection.username">sa</property>
+    <property name="hibernate.connection.password">20102003</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
+    <mapping class="entity.SinhVienEntity"/>
+    <mapping class="entity.HocPhanEntity"/> 
+    <mapping class="entity.AccountEntity"/>
+    <mapping class="entity.DangKyHpEntity"/>
+  </session-factory>
+</hibernate-configuration>
