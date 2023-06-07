@@ -6,6 +6,8 @@ package controller;
 
 import entity.DangKyHpEntity;
 import entity.HocPhanEntity;
+import entity.SinhVienEntity;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
@@ -14,10 +16,13 @@ import java.util.Set;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import util.HibernateUtil;
 
 /**
@@ -194,5 +199,22 @@ public class HocPhanController {
             session.close();
         }
     }
-   
+     public void timkiemhp(String tuKhoa, JTable dshpsv) {
+        DefaultTableModel modelx = (DefaultTableModel) dshpsv.getModel();
+        modelx.setRowCount(0); // Xóa dữ liệu cũ trong bảng
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            String hqlQuery = "FROM HocPhanEntity WHERE ten_hp LIKE :keyword OR ma_hp LIKE :keyword";
+            Query query = session.createQuery(hqlQuery);
+            query.setParameter("keyword", "%" + tuKhoa + "%");
+            List<HocPhanEntity> resultList = query.list();
+            for (HocPhanEntity hp : resultList) {
+                Object[] row = { hp.getMaHp(), hp.getTenHp(),hp.getTinChi(), hp.getTrongSo(), hp.getTenKhoa(), hp.getThoiLuong()};
+                modelx.addRow(row); // Thêm dữ liệu mới vào bảng
+            }
+        } finally {
+            session.close();
+        }
+    }
+
 }

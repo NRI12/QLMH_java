@@ -89,8 +89,6 @@ public class AdminMenu extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         sinhvienpanel = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        sinhvienpanel1 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
         cardlayouttab = new javax.swing.JPanel();
         card1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -140,6 +138,8 @@ public class AdminMenu extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tablesinhvien = new javax.swing.JTable();
         btnxoasv = new javax.swing.JButton();
+        svtk = new javax.swing.JTextField();
+        tk = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -273,31 +273,6 @@ public class AdminMenu extends javax.swing.JFrame {
         sinhvienpanel.add(jLabel12);
 
         jPanel2.add(sinhvienpanel);
-
-        sinhvienpanel1.setBackground(new java.awt.Color(64, 43, 100));
-        sinhvienpanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        sinhvienpanel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sinhvienpanel1MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                sinhvienpanel1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                sinhvienpanel1MouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                sinhvienpanel1MousePressed(evt);
-            }
-        });
-        sinhvienpanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 25, 12));
-
-        jLabel14.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel14.setText("Thống kê");
-        sinhvienpanel1.add(jLabel14);
-
-        jPanel2.add(sinhvienpanel1);
 
         javax.swing.GroupLayout sidePanelLayout = new javax.swing.GroupLayout(sidePanel);
         sidePanel.setLayout(sidePanelLayout);
@@ -482,7 +457,7 @@ public class AdminMenu extends javax.swing.JFrame {
                     .addComponent(btnadd)
                     .addComponent(btnsua)
                     .addComponent(btnluu))
-                .addGap(637, 637, 637))
+                .addGap(657, 657, 657))
             .addGroup(card2Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1062, Short.MAX_VALUE)
                 .addContainerGap())
@@ -698,6 +673,24 @@ public class AdminMenu extends javax.swing.JFrame {
             }
         });
 
+        svtk.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                svtkMouseEntered(evt);
+            }
+        });
+        svtk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                svtkActionPerformed(evt);
+            }
+        });
+
+        tk.setText("Tìm kiếm ");
+        tk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tkActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout card5Layout = new javax.swing.GroupLayout(card5);
         card5.setLayout(card5Layout);
         card5Layout.setHorizontalGroup(
@@ -707,17 +700,24 @@ public class AdminMenu extends javax.swing.JFrame {
                 .addComponent(jLabel13)
                 .addGap(461, 461, 461))
             .addComponent(jScrollPane3)
-            .addGroup(card5Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, card5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnxoasv)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(svtk, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tk)
+                .addGap(27, 27, 27))
         );
         card5Layout.setVerticalGroup(
             card5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(card5Layout.createSequentialGroup()
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                .addComponent(btnxoasv)
+                .addGroup(card5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnxoasv)
+                    .addComponent(svtk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tk))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -1031,21 +1031,20 @@ public class AdminMenu extends javax.swing.JFrame {
         admincontroller.xoasv(tablesinhvien);
     }//GEN-LAST:event_btnxoasvActionPerformed
 
-    private void sinhvienpanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sinhvienpanel1MouseClicked
-        // TODO add your handling code here:                               
-    }//GEN-LAST:event_sinhvienpanel1MouseClicked
-
-    private void sinhvienpanel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sinhvienpanel1MouseEntered
+    private void svtkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_svtkActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_sinhvienpanel1MouseEntered
+    }//GEN-LAST:event_svtkActionPerformed
 
-    private void sinhvienpanel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sinhvienpanel1MouseExited
+    private void svtkMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_svtkMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_sinhvienpanel1MouseExited
+       
+    }//GEN-LAST:event_svtkMouseEntered
 
-    private void sinhvienpanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sinhvienpanel1MousePressed
+    private void tkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tkActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_sinhvienpanel1MousePressed
+        String string_input = svtk.getText();
+        sinhviencontroller.timKiemSinhVienTheoTuKhoa(string_input,tablesinhvien);
+    }//GEN-LAST:event_tkActionPerformed
 
     private void resetColor() {
         accountPanel.setBackground(new java.awt.Color(64,43,100));
@@ -1113,7 +1112,6 @@ public class AdminMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1140,13 +1138,14 @@ public class AdminMenu extends javax.swing.JFrame {
     private javax.swing.JButton resetbtn;
     private javax.swing.JPanel sidePanel;
     private javax.swing.JPanel sinhvienpanel;
-    private javax.swing.JPanel sinhvienpanel1;
+    private javax.swing.JTextField svtk;
     private javax.swing.JTable tableUser;
     private javax.swing.JTable tablesinhvien;
     private javax.swing.JTextField tenhocphantxt;
     private javax.swing.JTextField thoiluongtxt;
     private javax.swing.JTextField tinchitxt;
     private javax.swing.JPanel titlePanel;
+    private javax.swing.JButton tk;
     private javax.swing.JLabel trangthaiLabel;
     private javax.swing.JTextField trongsotxt;
     private javax.swing.JTextField vienquanlytxt;
